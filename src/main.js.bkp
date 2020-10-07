@@ -1,6 +1,58 @@
-import { soma } from './functions'
+import axios from 'axios'
 
-console.log(soma(1, 2))
+class Api {
+    static async getUserInfo(username) {
+        try {
+            const response = await axios.get(`https://api.github.com/users/${username}`)
+            console.log(response)
+        } catch (err) {
+            console.log("Erro na API.")
+        }
+    }
+
+}
+
+Api.getUserInfo('edsoncarlosdvp')
+// ECMA Script
+// const minhaPromise = () => new Promise((resolve, reject) => { setTimeout(() => { resolve('OK') }, 2000) })
+
+// async function executaPromise() {
+//     const response = await minhaPromise()
+//     console.log(response)
+// }
+
+// COM ARROW FUNCTION
+// const executaPromise = async () => {
+//     console.log(await minhaPromise())
+//     console.log(await minhaPromise())
+//     console.log(await minhaPromise())
+//     console.log(await minhaPromise())
+// }
+
+// executaPromise()
+
+// Promise em JS
+/*const minhaPromise = () => new Promise((resolve, reject) => setTimeout(() => { resolve('OK') }, 2000))
+ 
+minhaPromise()
+    .then(response => {
+        console.log(response)
+    })
+    .catch(err => {
+ 
+    })*/
+
+//import * as funcoes from './functions'
+//import div from './functions'
+//import {soma as somaFunction, sub} from './functions' //Renomeia funções
+//import soma, { sub } from './functions'
+//import soma from './soma' // com o export default, a função pode receber outro nome
+
+// console.log(funcoes.sub(1, 2))
+// console.log(funcoes.soma(10, 2))
+// console.log(funcoes.mult(50, 2))
+console.log(div(10, 2))
+//console.log(soma(1, 5))
 
 // SINTAXE CURTA DE OBJETO
 
